@@ -1,0 +1,144 @@
+:root {
+  --panel-bg-color: #dfe4ea;
+  --container-bg-color: #f1f2f6;
+  --text-color: #2f3542;
+}
+:root[theme="dark"] {
+  --panel-bg-color: #2f3542;
+  --container-bg-color: #57606f;
+  --text-color: #ced6e0;
+}
+* {
+  margin: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  font-family: Verdana;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+
+.all {
+  display: block;
+  margin: 0px auto;
+  width: 960px;
+}
+
+
+/*div:first-of-type {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+label {
+  margin-right: 15px;
+  line-height: 32px;
+}*/
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+input[type="radio"]:checked {
+  border: 6px solid black;
+}
+
+/*button,
+legend {
+  color: white;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 0;
+  border: 0;
+  font-size: 14px;
+}
+
+button:hover,
+button:focus {
+  color: #999;
+}
+
+button:active {
+  background-color: white;
+  color: black;
+  outline: 1px solid black;
+}*/
+
+
+
+.container {
+  flex: 1;
+  padding: 1rem;
+  background: var(--container-bg-color);
+}
+
+.color {
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.color:hover {
+    border: 1px solid black;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.workField {
+    display: float;
+}
+
+.canvas {
+    float: left;
+    width: 100%;
+}
+footer {
+  padding: 1rem;
+  background: var(--panel-bg-color);
+}
+input[type="button"] {
+  color: var(--text-color);
+  background: var(--panel-bg-color);
+
+  padding: 0.3rem;
+  margin: 0.2rem;
+  font-size: 1rem;
+}
+input[type="color"] {
+  min-height: 50px;
+  min-width: 50px;
+}
+
+input {
+  cursor: pointer;
+}

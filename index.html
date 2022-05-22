@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CanvasFun</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <input type="button" value="Toggle" id="toggle-theme" />
+      </div>
+      <h2 class="title">h2</h2>
+      <p class="content">p</p>
+    </div>
+
+    <div class="all">
+      <div id="controls">
+        <div id="changeColorBrush">
+          <span>Change color of brush</span>
+          <div class="color green">Green</div>
+          <div class="color red">Red</div>
+          <div class="color yellow">Yellow</div>
+        </div>
+
+        <input id="new" type="color" value="#000000" />
+        <div>
+          <input type="range" id="fat" list="tickmarks" name="fat" min="1" max="20" step="1" value="10"/>
+          <label for="fat">LineWidth</label>
+          <datalist id="tickmarks">
+            <option value="1" label="1px">
+            <option value="5">
+            <option value="10" label="10px">
+            <option value="15">
+            <option value="20" label="20px">
+          </datalist>
+        </div>
+
+
+        <form>
+            <fieldset>
+              <legend>Please select your preferred contact method:</legend>
+        <div>
+            <input type="radio" id="butt"
+             name="cornerChoice1" value="butt" checked>
+            <label for="cornerChoice1">Butt</label>
+      
+            <input type="radio" id="round"
+             name="cornerChoice2" value="round">
+            <label for="cornerChoice2">Round</label>
+      
+            <input type="radio" id="square"
+             name="cornerChoice3" value="square">
+            <label for="cornerChoice3">Square</label>
+          </div>
+        </fieldset>
+    </form>
+
+        <div id="changeLineWidth">
+          <span>Change width of line</span>
+          <div class="color five">5px</div>
+          <div class="color ten">10px</div>
+          <div class="color tenfive">15px</div>
+        </div>
+
+        <div id="changeCorner">
+          <span>Change corner</span>
+          <div class="color butt">Butt</div>
+          <div class="color round">Round</div>
+          <div class="color square">Square</div>
+        </div>
+      </div>
+
+      <button id="undo">Undo</button><br />
+      <button id="redo">Redo</button><br />
+
+      <div class="workField">
+        <div class="canvas">
+          <canvas
+            id="myCanvasFirst"
+            width="450"
+            height="350"
+            style="background-color: #eee; border: 1px soplid #ccc"
+            >Canvas</canvas
+          >
+        </div>
+
+        <div class="canvas">
+          <canvas
+            id="myCanvasSecond"
+            width="450"
+            height="350"
+            style="background-color: #eee; border: 1px soplid #ccc"
+            >Canvas</canvas
+          >
+        </div>
+      </div>
+      <div>
+        <div>
+          <button id="clean">Clean</button>
+        </div>
+        <div>
+          <button id="snap">Snap</button>
+        </div>
+        <div>
+          <button id="save">Save</button>
+        </div>
+        <a href="" id="link"></a>
+      </div>
+    </div>
+    <footer>
+      <p>CopyRight 2022 MarkAlexI</p>
+    </footer>
+    <script src="./run.js"></script>
+  </body>
+</html>
