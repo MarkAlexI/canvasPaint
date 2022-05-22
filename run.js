@@ -1,7 +1,7 @@
 'use stict';
 
-const toggleBtn = document.querySelector("#toggle-theme");
-toggleBtn.addEventListener("click", function () {
+const toggleButton = document.querySelector("#toggle-theme");
+toggleButton.addEventListener("click", function () {
   if (document.documentElement.hasAttribute("theme")) {
     document.documentElement.removeAttribute("theme");
   } else {
@@ -28,12 +28,12 @@ let previous = {
 
 
 ////////////
-const tt = document.getElementById("new");
-const ww = document.getElementById("fat");
-tt.addEventListener("input", (ev) => context.strokeStyle = tt.value, false);
-tt.addEventListener("change", (ev) => context.strokeStyle = tt.value, false);
-ww.addEventListener("input", (ev) => context.lineWidth = ww.value, false);
-ww.addEventListener("change", (ev) => context.lineWidth = ww.value, false);
+const colorPicker = document.getElementById("new");
+const widthPicker = document.getElementById("fat");
+colorPicker.addEventListener("input", (ev) => context.strokeStyle = colorPicker.value, false);
+colorPicker.addEventListener("change", (ev) => context.strokeStyle = colorPicker.value, false);
+widthPicker.addEventListener("input", (ev) => context.lineWidth = widthPicker.value, false);
+widthPicker.addEventListener("change", (ev) => context.lineWidth = widthPicker.value, false);
 const changeColor = document.querySelector("#controls");
 changeColor.addEventListener("click", function (event) {
   switch (event.target.className) {
@@ -66,7 +66,7 @@ changeColor.addEventListener("click", function (event) {
       break;
   }
   ////////////
-  context.strokeStyle = tt.value;
+  context.strokeStyle = colorPicker.value;
   context.lineWidth = ww.value;
 });
 
