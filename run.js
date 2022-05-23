@@ -26,8 +26,6 @@ let previous = {
   cap: context.lineCap,
 };
 
-
-////////////
 const colorPicker = document.getElementById("new");
 const widthPicker = document.getElementById("fat");
 colorPicker.addEventListener("input", (ev) => context.strokeStyle = colorPicker.value, false);
@@ -35,40 +33,6 @@ colorPicker.addEventListener("change", (ev) => context.strokeStyle = colorPicker
 widthPicker.addEventListener("input", (ev) => context.lineWidth = widthPicker.value, false);
 widthPicker.addEventListener("change", (ev) => context.lineWidth = widthPicker.value, false);
 const changeColor = document.querySelector("#controls");
-changeColor.addEventListener("click", function (event) {
-  switch (event.target.className) {
-    case "color green":
-      context.strokeStyle = "green";
-      break;
-    case "color red":
-      context.strokeStyle = "red";
-      break;
-    case "color yellow":
-      context.strokeStyle = "yellow";
-      break;
-    case "color five":
-      context.lineWidth = 5;
-      break;
-    case "color ten":
-      context.lineWidth = 10;
-      break;
-    case "color tenfive":
-      context.lineWidth = 15;
-      break;
-    case "color butt":
-      context.lineCap = "butt";
-      break;
-    case "color round":
-      context.lineCap = "round";
-      break;
-    case "color square":
-      context.lineCap = "square";
-      break;
-  }
-  ////////////
-  context.strokeStyle = colorPicker.value;
-  context.lineWidth = ww.value;
-});
 
 canvas.addEventListener("mousedown", function (e) {
   previous = {
