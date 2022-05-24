@@ -28,18 +28,6 @@ body {
   width: 960px;
 }
 
-
-/*div:first-of-type {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 5px;
-}
-
-label {
-  margin-right: 15px;
-  line-height: 32px;
-}*/
-
 input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -60,29 +48,6 @@ input[type="radio"] {
 input[type="radio"]:checked {
   border: 6px solid black;
 }
-
-/*button,
-legend {
-  color: white;
-  background-color: black;
-  padding: 5px 10px;
-  border-radius: 0;
-  border: 0;
-  font-size: 14px;
-}
-
-button:hover,
-button:focus {
-  color: #999;
-}
-
-button:active {
-  background-color: white;
-  color: black;
-  outline: 1px solid black;
-}*/
-
-
 
 .container {
   flex: 1;
