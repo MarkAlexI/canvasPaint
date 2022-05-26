@@ -100,7 +100,7 @@ undo.addEventListener("click", Undo);
 redo.addEventListener("click", Redo);
 
 function drawPaths() {
-  context.clearRect(0, 0, 450, 350);//canvas.w, canvas.h);
+  context.clearRect(0, 0, 900, 700);//canvas.w, canvas.h);
 
   pathsArray.forEach((path) => {
     context.strokeStyle = path[0].style;
@@ -155,11 +155,11 @@ let canvas2 = document.getElementById("myCanvasSecond"),
   myPaint = document.getElementById("myCanvasFirst");
 
 document.getElementById("clean").onclick = function (e) {
-  context.clearRect(0, 0, 450, 350);
+  context.clearRect(0, 0, 900, 700);
 };
 
 document.getElementById("snap").onclick = function (e) {
-  context2.drawImage(myPaint, 0, 0, 450, 350);
+  context2.drawImage(myPaint, 0, 0, 900, 700);
 };
 
 let count = 1;
