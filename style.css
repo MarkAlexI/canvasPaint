@@ -23,7 +23,7 @@ body {
 }
 
 .all {
-  display: block;
+  display: inline-block;
   margin: 0px auto;
   width: 900px;
 }
@@ -54,7 +54,17 @@ input[type="radio"]:checked {
   padding: 1rem;
   background: var(--container-bg-color);
 }
-
+button {
+  margin: 10px;
+  padding: 10px;
+  font: 1em sans-serif;
+  color: beige;
+  background-color: #57606f;
+}
+button:hover {
+  color: white;
+  background-color: #2f3542;
+}
 footer {
   padding: 1rem;
   background: var(--panel-bg-color);
