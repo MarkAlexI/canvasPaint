@@ -28,6 +28,8 @@ let previous = {
 
 const colorPicker = document.getElementById("new");
 const widthPicker = document.getElementById("fat");
+context.lineWidth = widthPicker.value;
+
 colorPicker.addEventListener("input", (ev) => context.strokeStyle = colorPicker.value, false);
 colorPicker.addEventListener("change", (ev) => context.strokeStyle = colorPicker.value, false);
 widthPicker.addEventListener("input", (ev) => context.lineWidth = widthPicker.value, false);

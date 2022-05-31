@@ -17,15 +17,7 @@ html {
 body {
   height: 100%;
   font-family: Verdana;
-  display: flex;
-  flex-direction: column;
   color: var(--text-color);
-}
-
-.all {
-  display: inline-block;
-  margin: 0px auto;
-  width: 900px;
 }
 
 input[type="radio"] {
@@ -50,8 +42,10 @@ input[type="radio"]:checked {
 }
 
 .container {
-  flex: 1;
+  margin: 0px auto 20px;
+  max-width: 900px;
   padding: 1rem;
+  align-items: center;
   background: var(--container-bg-color);
 }
 button {
@@ -62,6 +56,7 @@ button {
   background-color: #57606f;
 }
 button:hover {
+
   color: white;
   background-color: #2f3542;
 }
@@ -78,6 +73,7 @@ input[type="button"] {
   font-size: 1rem;
 }
 input[type="button"]:hover {
+  color: #f1f2f6;
   background-color: #2f3542;
 }
 input[type="color"] {
