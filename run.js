@@ -30,13 +30,13 @@ const colorPicker = document.getElementById("new");
 const widthPicker = document.getElementById("fat");
 context.lineWidth = widthPicker.value;
 
-colorPicker.addEventListener("input", (ev) => context.strokeStyle = colorPicker.value, false);
-colorPicker.addEventListener("change", (ev) => context.strokeStyle = colorPicker.value, false);
-widthPicker.addEventListener("input", (ev) => context.lineWidth = widthPicker.value, false);
-widthPicker.addEventListener("change", (ev) => context.lineWidth = widthPicker.value, false);
+colorPicker.addEventListener("input", (event) => context.strokeStyle = colorPicker.value, false);
+colorPicker.addEventListener("change", (event) => context.strokeStyle = colorPicker.value, false);
+widthPicker.addEventListener("input", (event) => context.lineWidth = widthPicker.value, false);
+widthPicker.addEventListener("change", (event) => context.lineWidth = widthPicker.value, false);
 const changeColor = document.querySelector("#controls");
 
-canvas.addEventListener("mousedown", function (e) {
+canvas.addEventListener("mousedown", function (event) {
   previous = {
     x: mouse.x,
     y: mouse.y,
@@ -44,7 +44,7 @@ canvas.addEventListener("mousedown", function (e) {
     lineWidth: context.lineWidth,
     cap: context.lineCap,
   };
-  mouse = getMousePos(canvas, e);
+  mouse = getMousePos(canvas, event);
   points = [];
   points.push({
     x: mouse.x,
@@ -59,7 +59,7 @@ canvas.addEventListener("mousedown", function (e) {
 
 canvas.addEventListener(
   "mousemove",
-  function (e) {
+  function (event) {
     if (draw) {
       previous = {
         x: mouse.x,
@@ -68,7 +68,7 @@ canvas.addEventListener(
         lineWidth: context.lineWidth,
         cap: context.lineCap,
       };
-      mouse = getMousePos(canvas, e);
+      mouse = getMousePos(canvas, event);
       points.push({
         x: mouse.x,
         y: mouse.y,
@@ -90,7 +90,7 @@ canvas.addEventListener(
 
 canvas.addEventListener(
   "mouseup",
-  function (e) {
+  function (event) {
     pathsArray.push(points);
     draw = false;
   },
@@ -156,17 +156,17 @@ let canvas2 = document.getElementById("myCanvasSecond"),
   context2 = canvas2.getContext("2d"),
   myPaint = document.getElementById("myCanvasFirst");
 
-document.getElementById("clean").onclick = function (e) {
+document.getElementById("clean").onclick = function (event) {
   context.clearRect(0, 0, 900, 700);
 };
 
-document.getElementById("snap").onclick = function (e) {
+document.getElementById("snap").onclick = function (event) {
   context2.drawImage(myPaint, 0, 0, 900, 700);
 };
 
 let count = 1;
 
-document.getElementById("save").onclick = function (e) {
+document.getElementById("save").onclick = function (event) {
 
   let image = canvas
     .toDataURL("image/png")
