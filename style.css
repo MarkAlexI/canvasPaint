@@ -1,7 +1,7 @@
 :root {
   --panel-bg-color: #dfe4ea;
   --container-bg-color: #f1f2f6;
-  --text-color: #2f3542;
+  --text-color: beige;
 }
 :root[theme="dark"] {
   --panel-bg-color: #2f3542;
@@ -17,7 +17,7 @@ html {
 body {
   height: 100%;
   font-family: Verdana;
-  color: var(--text-color);
+  color: #2f3542;
 }
 
 input[type="radio"] {
@@ -49,10 +49,16 @@ input[type="radio"]:checked {
   background: var(--container-bg-color);
 }
 button {
-  margin: 10px;
+  color: var(--text-color);
+  background: var(--panel-bg-color);
+
+  padding: 0.3rem;
+  margin: 0.2rem;
+  font-size: 1rem;
+/*  margin: 10px;
   padding: 10px;
   font: 1em sans-serif;
-  color: beige;
+  color: beige;*/
   background-color: #57606f;
 }
 button:hover {
@@ -63,18 +69,6 @@ button:hover {
 footer {
   padding: 1rem;
   background: var(--panel-bg-color);
-}
-input[type="button"] {
-  color: var(--text-color);
-  background: var(--panel-bg-color);
-
-  padding: 0.3rem;
-  margin: 0.2rem;
-  font-size: 1rem;
-}
-input[type="button"]:hover {
-  color: #f1f2f6;
-  background-color: #2f3542;
 }
 input[type="color"] {
   min-height: 50px;

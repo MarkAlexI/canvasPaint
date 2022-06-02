@@ -11,8 +11,8 @@ toggleButton.addEventListener("click", function () {
 
 let canvas = document.getElementById("myCanvasFirst"),
   context = canvas.getContext("2d"),
-  w = canvas.clientWidth,
-  h = canvas.clientHeight;
+  w = context.clientWidth,
+  h = context.clientHeight;
 
 let mouse = { x: 0, y: 0 };
 let draw = false;

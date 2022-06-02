@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <div>
-        <input type="button" value="Toggle" id="toggle-theme" />
+        <button id="toggle-theme">Toggle</button>
       </div>
       <h2 class="title">Draw on canvas</h2>
       <p class="content">Draw and save your paints.</p>
@@ -18,7 +18,7 @@
 
     <div class="container">
       <div id="controls">
-        <input id="new" type="color" value="#000" />
+        <input id="new" type="color" value="#000000" />
         <div>
           <input type="range" id="fat" list="tickmarks" name="fat" min="1" max="20" step="1" value="10"/>
           <label for="fat">LineWidth</label>
@@ -50,8 +50,8 @@
         </fieldset>
     </form>
 
-      <input type="button" id="undo">Undo</input>
-      <input type="button" id="redo">Redo</input><br />
+      <button id="undo">Undo</button>
+      <button id="redo">Redo</button><br />
 
       <div class="workField">
         <div class="canvas">
