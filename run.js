@@ -28,13 +28,19 @@ let previous = {
 
 const colorPicker = document.getElementById("new");
 const widthPicker = document.getElementById("fat");
+const buttEdgePicker = document.getElementById("butt");
+const roundEdgePicker = document.getElementById("round");
+const squareEdgePicker = document.getElementById("square");
 context.lineWidth = widthPicker.value;
 
 colorPicker.addEventListener("input", (event) => context.strokeStyle = colorPicker.value, false);
 colorPicker.addEventListener("change", (event) => context.strokeStyle = colorPicker.value, false);
 widthPicker.addEventListener("input", (event) => context.lineWidth = widthPicker.value, false);
 widthPicker.addEventListener("change", (event) => context.lineWidth = widthPicker.value, false);
-const changeColor = document.querySelector("#controls");
+
+buttEdgePicker.addEventListener("change", (event) => context.lineCap = "butt", false);
+roundEdgePicker.addEventListener("change", (event) => context.lineCap = "round", false);
+squareEdgePicker.addEventListener("change", (event) => context.lineCap = "square", false);
 
 canvas.addEventListener("mousedown", function (event) {
   previous = {
