@@ -13,6 +13,7 @@
 }
 html {
   height: 100%;
+  background-color: #dfe4ea;
 }
 body {
   height: 100%;
@@ -21,18 +22,13 @@ body {
 }
 
 input[type="radio"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
-
   border-radius: 50%;
   width: 16px;
   height: 16px;
-
   border: 2px solid #999;
   transition: 0.2s all linear;
   margin-right: 5px;
-
   position: relative;
   top: 4px;
 }
@@ -55,10 +51,6 @@ button {
   padding: 0.3rem;
   margin: 0.2rem;
   font-size: 1rem;
-/*  margin: 10px;
-  padding: 10px;
-  font: 1em sans-serif;
-  color: beige;*/
   background-color: #57606f;
 }
 button:hover {
