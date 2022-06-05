@@ -47,14 +47,12 @@ input[type="radio"]:checked {
 button {
   color: var(--text-color);
   background: var(--panel-bg-color);
-
   padding: 0.3rem;
   margin: 0.2rem;
   font-size: 1rem;
   background-color: #57606f;
 }
 button:hover {
-
   color: white;
   background-color: #2f3542;
 }
@@ -62,11 +60,15 @@ footer {
   padding: 1rem;
   background: var(--panel-bg-color);
 }
-input[type="color"] {
+input[type="color"], #text {
   min-height: 50px;
   min-width: 50px;
 }
 
 input {
   cursor: pointer;
+}
+
+#text {
+  display: inline;
 }

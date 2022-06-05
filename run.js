@@ -158,6 +158,16 @@ function getMousePos(canvas, event) {
   };
 }
 
+const text = document.getElementById("text");
+text.addEventListener("click", function(event) {
+  let input = prompt("Wright your text and click onto canvas.", "");
+  if (input) {
+    let position = { x: 200, y: 200 };
+    context.font = Math.max(14, context.lineWidth) + "px sans-serif";
+    context.fillText(input, position.x, position.y);
+  }
+}, false);
+
 let canvas2 = document.getElementById("myCanvasSecond"),
   context2 = canvas2.getContext("2d"),
   myPaint = document.getElementById("myCanvasFirst");
