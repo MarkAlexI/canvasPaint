@@ -42,7 +42,7 @@ buttEdgePicker.addEventListener("change", (event) => context.lineCap = "butt", f
 roundEdgePicker.addEventListener("change", (event) => context.lineCap = "round", false);
 squareEdgePicker.addEventListener("change", (event) => context.lineCap = "square", false);
 
-canvas.addEventListener("mousedown", function (event) {
+function handleStart(event) {
   previous = {
     x: mouse.x,
     y: mouse.y,
@@ -59,9 +59,13 @@ canvas.addEventListener("mousedown", function (event) {
     lineWidth: context.lineWidth,
     cap: context.lineCap,
   });
-
+console.dir(previous);/////
   draw = true;
-});
+}
+
+canvas.addEventListener("mousedown", handleStart, false);
+
+canvas.addEventListener("touchstart", handleStart, false);
 
 canvas.addEventListener(
   "mousemove",
