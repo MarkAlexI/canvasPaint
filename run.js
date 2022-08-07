@@ -63,38 +63,46 @@ console.dir(previous);/////
   draw = true;
 }
 
+function handleMove(event) {
+  if (draw) {
+    previous = {
+      x: mouse.x,
+      y: mouse.y,
+      style: context.strokeStyle,
+      lineWidth: context.lineWidth,
+      cap: context.lineCap,
+    };
+    mouse = getMousePos(canvas, event);
+    points.push({
+      x: mouse.x,
+      y: mouse.y,
+      style: context.strokeStyle,
+      lineWidth: context.lineWidth,
+      cap: context.lineCap,
+    });
+    context.strokeStyle = previous.style;
+    context.lineWidth = previous.lineWidth;
+    context.lineCap = previous.cap;
+    context.beginPath();
+    context.moveTo(previous.x, previous.y);
+    context.lineTo(mouse.x, mouse.y);
+    context.stroke();
+  }
+}
+
 canvas.addEventListener("mousedown", handleStart, false);
 
 canvas.addEventListener("touchstart", handleStart, false);
 
 canvas.addEventListener(
   "mousemove",
-  function (event) {
-    if (draw) {
-      previous = {
-        x: mouse.x,
-        y: mouse.y,
-        style: context.strokeStyle,
-        lineWidth: context.lineWidth,
-        cap: context.lineCap,
-      };
-      mouse = getMousePos(canvas, event);
-      points.push({
-        x: mouse.x,
-        y: mouse.y,
-        style: context.strokeStyle,
-        lineWidth: context.lineWidth,
-        cap: context.lineCap,
-      });
-      context.strokeStyle = previous.style;
-      context.lineWidth = previous.lineWidth;
-      context.lineCap = previous.cap;
-      context.beginPath();
-      context.moveTo(previous.x, previous.y);
-      context.lineTo(mouse.x, mouse.y);
-      context.stroke();
-    }
-  },
+  handleMove,
+  false
+);
+
+canvas.addEventListener(
+  "touchmove",
+  handleMove,
   false
 );
 
