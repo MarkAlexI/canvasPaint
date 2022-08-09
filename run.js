@@ -59,11 +59,13 @@ function handleStart(event) {
     lineWidth: context.lineWidth,
     cap: context.lineCap,
   });
-console.dir(previous);/////
+
   draw = true;
 }
 
 function handleMove(event) {
+  event.preventDefault();
+  
   if (draw) {
     previous = {
       x: mouse.x,
@@ -91,6 +93,8 @@ function handleMove(event) {
 }
 
 function handleEnd(event) {
+  event.preventDefault();
+  
   pathsArray.push(points);
   draw = false;
 }
