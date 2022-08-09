@@ -90,6 +90,11 @@ function handleMove(event) {
   }
 }
 
+function handleEnd(event) {
+  pathsArray.push(points);
+  draw = false;
+}
+
 canvas.addEventListener("mousedown", handleStart, false);
 
 canvas.addEventListener("touchstart", handleStart, false);
@@ -108,10 +113,13 @@ canvas.addEventListener(
 
 canvas.addEventListener(
   "mouseup",
-  function (event) {
-    pathsArray.push(points);
-    draw = false;
-  },
+  handleEnd,
+  false
+);
+
+canvas.addEventListener(
+  "touchend",
+  handleEnd,
   false
 );
 
@@ -165,8 +173,8 @@ function getMousePos(canvas, event) {
   let clientRect = canvas.getBoundingClientRect();
 
   return {
-    x: Math.round(event.clientX - clientRect.left),
-    y: Math.round(event.clientY - clientRect.top),
+    x: Math.round(event?.clientX || event.touches[0].clientX - clientRect.left),
+    y: Math.round(event?.clientY || event.touches[0].clientY - clientRect.top),
   };
 }
 
