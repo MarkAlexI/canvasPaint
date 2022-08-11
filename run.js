@@ -11,8 +11,8 @@ toggleButton.addEventListener("click", function () {
 
 let canvas = document.getElementById("myCanvasFirst"),
   context = canvas.getContext("2d"),
-  w = context.clientWidth,
-  h = context.clientHeight;
+  w = canvas.width,
+  h = canvas.height;
 
 let mouse = { x: 0, y: 0 };
 let draw = false;
@@ -132,7 +132,7 @@ undo.addEventListener("click", Undo);
 redo.addEventListener("click", Redo);
 
 function drawPaths() {
-  context.clearRect(0, 0, 900, 700);//canvas.w, canvas.h);
+  context.clearRect(0, 0, w, h);
 
   pathsArray.forEach((path) => {
     context.strokeStyle = path[0].style;
@@ -197,11 +197,11 @@ let canvas2 = document.getElementById("myCanvasSecond"),
   myPaint = document.getElementById("myCanvasFirst");
 
 document.getElementById("clean").onclick = function (event) {
-  context.clearRect(0, 0, 900, 700);
+  context.clearRect(0, 0, w, h);
 };
 
 document.getElementById("snap").onclick = function (event) {
-  context2.drawImage(myPaint, 0, 0, 900, 700);
+  context2.drawImage(myPaint, 0, 0, w, h);
 };
 
 let count = 1;
