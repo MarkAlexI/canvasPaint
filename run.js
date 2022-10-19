@@ -177,8 +177,8 @@ function getMousePos(canvas, event) {
   let clientRect = canvas.getBoundingClientRect();
 
   return {
-    x: Math.round(event?.clientX || event.touches[0].clientX - clientRect.left),
-    y: Math.round(event?.clientY || event.touches[0].clientY - clientRect.top),
+    x: Math.round((event?.clientX || event.touches[0].clientX) - clientRect.left),
+    y: Math.round((event?.clientY || event.touches[0].clientY) - clientRect.top),
   };
 }
 
