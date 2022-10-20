@@ -1,7 +1,7 @@
-'use stict';
+'use strict';
 
 const toggleButton = document.querySelector("#toggle-theme");
-toggleButton.addEventListener("click", function () {
+toggleButton.addEventListener("click", function() {
   if (document.documentElement.hasAttribute("theme")) {
     document.documentElement.removeAttribute("theme");
   } else {
@@ -9,7 +9,7 @@ toggleButton.addEventListener("click", function () {
   }
 });
 
-let canvas = document.getElementById("myCanvasFirst"),
+const canvas = document.getElementById("myCanvasFirst"),
   context = canvas.getContext("2d"),
   w = canvas.width,
   h = canvas.height;
@@ -65,7 +65,7 @@ function handleStart(event) {
 
 function handleMove(event) {
   event.preventDefault();
-  
+
   if (draw) {
     previous = {
       x: mouse.x,
@@ -94,7 +94,7 @@ function handleMove(event) {
 
 function handleEnd(event) {
   event.preventDefault();
-  
+
   pathsArray.push(points);
   draw = false;
 }
@@ -156,23 +156,22 @@ let pathRedo = [];
 
 function Undo() {
   if (pathsArray.length === 0) return;
-  //remove the last path from the paths array
+  
   pathRedo.push(pathsArray[pathsArray.length - 1]);
   pathsArray.splice(-1, 1);
-  //draw all the paths in the paths array
+  
   drawPaths();
 }
 
 function Redo() {
   if (pathRedo.length === 0) return;
-  //push the deleted path to the paths array
+  
   pathsArray.push(pathRedo[pathRedo.length - 1]);
   pathRedo.splice(-1, 1);
-  //draw all the paths in the paths array
+  
   drawPaths();
 }
 
-//a function to detect the mouse position
 function getMousePos(canvas, event) {
   let clientRect = canvas.getBoundingClientRect();
 
@@ -192,30 +191,29 @@ text.addEventListener("click", function(event) {
   }
 }, false);
 
-let canvas2 = document.getElementById("myCanvasSecond"),
+const canvas2 = document.getElementById("myCanvasSecond"),
   context2 = canvas2.getContext("2d"),
   myPaint = document.getElementById("myCanvasFirst");
 
-document.getElementById("clean").onclick = function (event) {
+document.getElementById("clean").onclick = function(event) {
   context.clearRect(0, 0, w, h);
 };
 
-document.getElementById("snap").onclick = function (event) {
+document.getElementById("snap").onclick = function(event) {
   context2.drawImage(myPaint, 0, 0, w, h);
 };
 
 let count = 1;
 
-document.getElementById("save").onclick = function (event) {
+document.getElementById("save").onclick = function(event) {
 
-  let image = canvas
-    .toDataURL("image/png")
-    .replace("image/png", "image/octet-stream");
-  let link = document.getElementById("link");
+  const image = canvas
+    .toDataURL("image/png");
+  const link = document.getElementById("link");
   link.setAttribute("download", "Snap" + count.toString() + ".png");
   link.setAttribute(
     "href",
-    canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
+    canvas.toDataURL("image/png")
   );
 
   window.location.href = image;
